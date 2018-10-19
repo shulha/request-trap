@@ -2,7 +2,8 @@ module.exports = {
   "extends": "airbnb",
   "env": {
     "browser": false,
-    "node": true
+    "node": true,
+    "mocha": true
   },
   "rules": {
     "semi": [2, "always"],
