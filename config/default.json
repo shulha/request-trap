@@ -1,3 +1,8 @@
 {
-  "DBHost": "mongodb://trap:trap2018@ds235053.mlab.com:35053/dev-trap"
+  "DBHost": "mongodb://trap:trap2018@ds055855.mlab.com:55855/dev-trap",
+  "DBOptions": {
+    "useNewUrlParser": true,
+    "keepAlive": 300000,
+    "connectTimeoutMS": 30000
+  }
 }
