@@ -1,4 +1,50 @@
-<h1>{{title}}</h1>
-<p>SHOW</p>
-<p>TRAP {{ trap_id }}</p>
+<h1 id="message"></h1>
 
+<h1>{{ trap_id }}</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">request date</th>
+        <th scope="col">method</th>
+        <th scope="col">headers</th>
+        <th scope="col">remote IP</th>
+        <th scope="col">scheme</th>
+        <th scope="col">query_params</th>
+        <th scope="col">cookies</th>
+        <th scope="col">body</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each requests}}
+            <tr>
+                <th scope="row">{{@key}}</th>
+                <td>{{ dateFormat this.created_at "MMMM Do YYYY, hh:mm:ss" }}</td>
+                <td>{{ this.method }}</td>
+                <td>
+                    {{#each this.headers}}
+                        <p>{{@key}}: {{this}}
+                    {{/each}}
+                </td>
+                <td>{{ this.remote_ip }}</td>
+                <td>{{ this.scheme }}</td>
+                <td>
+                    {{#each this.query_params}}
+                        <p>{{@key}}: {{this}}
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each this.cookies}}
+                        <p>{{@key}}: {{this}}
+                    {{/each}}
+                </td>
+                <td>
+                    {{#each this.body}}
+                        <p>{{@key}}: {{this}}
+                    {{/each}}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
