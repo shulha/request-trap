@@ -13,12 +13,9 @@ exports.create = (req, res) => {
   });
 
   newTrap.save((err, trap) => {
-    if (err) res.send(err);
+    if (err) res.status(500).json({ status: 500, message: err.message });
 
-    res.render('traps/create', {
-      title: 'Create trap',
-      trap_id: trap.trap_id,
-    });
+    res.status(201).json({ status: 201, message: `${trap.trap_id} has created` });
   });
 };
 

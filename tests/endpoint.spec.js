@@ -34,14 +34,14 @@ describe('endpoints are available', () => {
       chai.request(server)
         .get('/mysupersecreturlxj34')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(201);
         });
     });
     it('route for sending requests to be captured is available by POST method', () => {
       chai.request(server)
         .post('/mysupersecreturlxj34')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(201);
         });
     });
   });
