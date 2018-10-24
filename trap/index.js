@@ -5,7 +5,7 @@ exports.create = (req, res) => {
 
   const requestForTrap = {
     trap_id: trapId,
-    created_at: new Date().toLocaleString(),
+    created_at: new Date().toLocaleString('en-US'),
     remote_ip: req.ip,
     method: req.method,
     scheme: req.protocol,

@@ -16,7 +16,7 @@
     <tbody>
         {{#each requests}}
             <tr>
-                <td>{{ dateFormat this.created_at "MM/D/YYYY, h:mm:ss A" }}</td>
+                <td>{{ dateFormat this.created_at "M/D/YYYY, h:mm:ss A" }}</td>
                 <td>{{ this.method }}</td>
                 <td>
                     {{#each this.headers}}

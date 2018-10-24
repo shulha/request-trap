@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const socket = io.connect('http://localhost:3000');
+  const socket = io.connect('https://trap-req.herokuapp.com');
 
   socket.emit('room_join', trapId);
 
