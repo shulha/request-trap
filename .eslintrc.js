@@ -1,9 +1,14 @@
 module.exports = {
   "extends": "airbnb",
   "env": {
-    "browser": false,
+    "jquery": true,
+    "browser": true,
     "node": true,
     "mocha": true
+  },
+  "globals": {
+    "io": false,
+    "trapId": false
   },
   "rules": {
     "semi": [2, "always"],

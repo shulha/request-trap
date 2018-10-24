@@ -1,11 +1,8 @@
-<h1 id="message"></h1>
-
 <h1>{{ trap_id }}</h1>
 
-<table class="table">
+<table class="table" id="trapTable">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">#</th>
         <th scope="col">request date</th>
         <th scope="col">method</th>
         <th scope="col">headers</th>
@@ -19,8 +16,7 @@
     <tbody>
         {{#each requests}}
             <tr>
-                <th scope="row">{{@key}}</th>
-                <td>{{ dateFormat this.created_at "MMMM Do YYYY, hh:mm:ss" }}</td>
+                <td>{{ dateFormat this.created_at "MM/D/YYYY, h:mm:ss A" }}</td>
                 <td>{{ this.method }}</td>
                 <td>
                     {{#each this.headers}}
@@ -48,3 +44,9 @@
         {{/each}}
     </tbody>
 </table>
+
+
+<script>
+    const trapId =  '{{ trap_id }}';
+</script>
+<script src="/javascripts/script.js"></script>

@@ -5,6 +5,7 @@
  */
 const debug = require('debug')('request-trap:server');
 const http = require('http');
+const socket = require('socket.io');
 const app = require('../app');
 
 /**
@@ -36,6 +37,11 @@ app.set('port', port);
  * Create HTTP server.
  */
 const server = http.createServer(app);
+
+const io = socket(server);
+require('../sockets')(io);
+
+app.io = io;
 
 /**
  * Event listener for HTTP server "error" event.
